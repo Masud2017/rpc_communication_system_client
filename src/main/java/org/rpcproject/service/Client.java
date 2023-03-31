@@ -172,10 +172,10 @@ public class Client {
         Iterator itter = res.getEconomicStatResponseListList().iterator();
         while(itter.hasNext()){
             org.rpcproject.grpc.EconomicStateResponse item = (org.rpcproject.grpc.EconomicStateResponse) itter.next();
-            System.out.println("Year: "+item.getYear() + " Expense : "+item.getExpense() + " Length : "+item.getLength()+ " Type : "+item.getType());
+            System.out.println("Year: "+item.getYear() + " Expense : "+res.getEconomicStatResponseListList().get(res.getEconomicStatResponseListCount() - 1) + " Length : "+item.getLength()+ " Type : "+item.getType());
         }
 
-    } // FIXME: 3/31/2023
+    }
 
     public void getTopFiveHighestGrowthRate() {
         String oneYear = "";
@@ -218,10 +218,10 @@ public class Client {
 
         while(itter.hasNext()) {
             org.rpcproject.grpc.HighestGrowthRateResponse item = (org.rpcproject.grpc.HighestGrowthRateResponse) itter.next();
-            System.out.println("State : "+item.getState() + " Expense : "+item.getExpense());
+            System.out.println("State : "+item.getState());
         }
 
-    } // FIXME: 3/31/2023
+    }
 
     public void getRegionOverAllRateExpense() {
         String year = "";
